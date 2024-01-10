@@ -35,7 +35,12 @@ body {
         margin-left: 9px;
         border: 0.75px solid transparent;
         padding: 9px 10px;
-        color: $color-login;
+        color: red;
+
+        a {
+          text-decoration: none;
+          color: $color-login;
+        }
 
         &:hover {
           border: 0.75px solid $color-hover;
@@ -44,7 +49,6 @@ body {
     }
 
     .ul-nav {
-      text-decoration: none;
       list-style: none;
       display: flex;
       line-height: 24px;
@@ -54,6 +58,11 @@ body {
         border: 0.75px solid transparent;
         padding: 9px 10px;
 
+        a {
+          text-decoration: none;
+          color: $color-font;
+        }
+
         &:hover {
           border: 0.75px solid $color-hover;
         }
@@ -62,4 +71,61 @@ body {
   }
 
 }
+
+.home {
+  display: flex;
+  height: calc(100vh - 132px);
+
+    .banner {
+      width: 50vw;
+      height: auto;
+      background-image: url("../assets/images/homeimage.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 100% 100%;
+    }
+
+    .banner-description {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-family: $font-base;
+        color: $color-font;
+        font-size: 33px;
+        line-height: 55px;
+        font-weight: 300;
+
+
+      }
+
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      .btn {
+        background-color: transparent;
+        border: 0.75px solid $color-font;
+        width: 310px;
+        height: 120px;
+        padding: 13px 30px;
+        font-family: $font-base;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 45px;
+        cursor: pointer;
+
+      }
+    }
+
+  }
+
+
 

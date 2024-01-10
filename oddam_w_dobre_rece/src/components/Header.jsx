@@ -1,19 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className='header'>
             <nav className='navigation'>
                 <ul className='login'>
-                    <li>Zaloguj</li>
-                    <li>Załóż konto</li>
+                    <li>
+                        <Link to="/login">Zaloguj</Link>
+                    </li>
+                    <li>
+                        <Link to="/register">Załóż konto</Link>
+                    </li>
                 </ul>
                 <ul className='ul-nav'>
-                    <li>Start</li>
-                    <li>O co chodzi?</li>
-                    <li>O nas</li>
-                    <li>Fundacja i organizacje</li>
-                    <li>Kontakt</li>
+                    <li>
+                        <Link to="/">Start</Link>
+                    </li>
+                    <li>
+                        <Link to="/">O co chodzi?</Link>
+                    </li>
+                    <li>
+                        <Link to="/">O nas</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Fundacja i organizacje</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Kontakt</Link>
+                    </li>
                 </ul>
             </nav>
         </header>

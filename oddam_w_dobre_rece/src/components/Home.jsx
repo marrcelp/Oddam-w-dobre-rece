@@ -1,5 +1,5 @@
 import React from 'react';
-import homeimage from '../../src/assets/images/homeimage.png';
+import decoration_img from '../../src/assets/icons/Decoration.svg';
 
 const Home = () => {
     return (
@@ -8,7 +8,11 @@ const Home = () => {
                 <div className='banner'></div>
                 <div className='banner-description'>
                     <h1>Zacznij pomagać! <br></br>Oddaj niechciane rzeczy w zaufane ręce</h1>
-                    <button>ODDAJ <br></br>RZECZY</button>
+                    <img src={decoration_img} alt='decoration icon' className='decoration_img'/>
+                    <div className='button-container'>
+                        <button className='btn'>ODDAJ<br></br>RZECZY</button>
+                        <button className='btn'>ZORGANIZUJ<br></br>ZBIÓRKĘ</button>
+                    </div>
                 </div>
             </section>
 

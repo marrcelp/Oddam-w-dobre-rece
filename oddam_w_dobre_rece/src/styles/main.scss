@@ -35,7 +35,12 @@ body {
         margin-left: 9px;
         border: 0.75px solid transparent;
         padding: 9px 10px;
-        color: $color-login;
+        color: red;
+
+        a {
+          text-decoration: none;
+          color: $color-login;
+        }
 
         &:hover {
           border: 0.75px solid $color-hover;
@@ -44,7 +49,6 @@ body {
     }
 
     .ul-nav {
-      text-decoration: none;
       list-style: none;
       display: flex;
       line-height: 24px;
@@ -53,6 +57,11 @@ body {
         margin-left: 34px;
         border: 0.75px solid transparent;
         padding: 9px 10px;
+
+        a {
+          text-decoration: none;
+          color: $color-font;
+        }
 
         &:hover {
           border: 0.75px solid $color-hover;
@@ -95,6 +104,27 @@ body {
       }
 
     }
+
+    .button-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      .btn {
+        background-color: transparent;
+        border: 0.75px solid $color-font;
+        width: 310px;
+        height: 120px;
+        padding: 13px 30px;
+        font-family: $font-base;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 45px;
+        cursor: pointer;
+
+      }
+    }
+
   }
 
 

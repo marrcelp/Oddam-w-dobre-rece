@@ -1,0 +1,67 @@
+body {
+  font-family: $font-base;
+}
+
+.header {
+  width: 85vw;
+  margin: 0 auto;
+  height: 95px;
+  background-color: transparent;
+  color: $color-font;
+  font-size: 18px;
+  font-weight: 400;
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 37px;
+
+    .login {
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 15px;
+
+      li {
+        margin-left: 9px;
+        border: 0.75px solid transparent;
+        padding: 9px 10px;
+
+        a {
+          text-decoration: none;
+          color: $color-login;
+        }
+
+        &:hover {
+          border: 0.75px solid $color-hover;
+          z-index: 1;
+        }
+      }
+    }
+
+    .ul-nav {
+      list-style: none;
+      display: flex;
+      line-height: 24px;
+
+      li {
+        margin-left: 34px;
+        border: 0.75px solid transparent;
+        padding: 9px 10px;
+
+        a {
+          text-decoration: none;
+          color: $color-font;
+        }
+
+        &:hover {
+          border: 0.75px solid $color-hover;
+        }
+      }
+    }
+  }
+}
+

@@ -9,7 +9,8 @@ body {
 }
 
 .header {
-  width: 100%;
+  width: 85vw;
+  margin: 0 auto;
   height: 95px;
   background-color: transparent;
   color: $color-font;
@@ -21,7 +22,6 @@ body {
     flex-direction: column;
     align-items: flex-end;
     margin-top: 37px;
-    margin-right: 152px;
 
     .login {
       text-decoration: none;
@@ -35,7 +35,6 @@ body {
         margin-left: 9px;
         border: 0.75px solid transparent;
         padding: 9px 10px;
-        color: red;
 
         a {
           text-decoration: none;
@@ -44,6 +43,7 @@ body {
 
         &:hover {
           border: 0.75px solid $color-hover;
+          z-index: 1;
         }
       }
     }
@@ -72,9 +72,11 @@ body {
 
 }
 
+
 .home {
   display: flex;
   height: calc(100vh - 132px);
+  justify-content: center;
 
     .banner {
       width: 50vw;
@@ -83,6 +85,7 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 100% 100%;
+      z-index: -1;
     }
 
     .banner-description {
@@ -99,10 +102,7 @@ body {
         font-size: 33px;
         line-height: 55px;
         font-weight: 300;
-
-
       }
-
     }
 
     .button-container {
@@ -113,14 +113,20 @@ body {
       .btn {
         background-color: transparent;
         border: 0.75px solid $color-font;
-        width: 310px;
+        width: 250px;
         height: 120px;
         padding: 13px 30px;
         font-family: $font-base;
         font-weight: 300;
-        font-size: 36px;
-        line-height: 45px;
+        font-size: 30px;
         cursor: pointer;
+        text-align: center;
+
+        &:hover {
+          background-color: $color-login;
+          color: white;
+          box-shadow: 0 6px 15px 0 rgba(129,133,155,.74);
+        }
 
       }
     }

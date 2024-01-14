@@ -36,25 +36,27 @@
     justify-content: space-evenly;
     width: 100%;
 
-    .btn {
-      background-color: transparent;
-      border: 0.75px solid $color-font;
-      width: 250px;
-      height: 120px;
-      padding: 13px 30px;
-      font-family: $font-base;
-      font-weight: 300;
-      font-size: 30px;
-      cursor: pointer;
-      text-align: center;
 
-      &:hover {
-        background-color: $color-login;
-        color: white;
-        box-shadow: 0 6px 15px 0 rgba(129,133,155,.74);
-      }
+  }
 
-    }
+}
+
+.btn {
+  background-color: transparent;
+  border: 0.75px solid $color-font;
+  width: 250px;
+  height: 120px;
+  padding: 13px 30px;
+  font-family: $font-base;
+  font-weight: 300;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: $color-login;
+    color: white;
+    box-shadow: 0 6px 15px 0 rgba(129,133,155,.74);
   }
 
 }

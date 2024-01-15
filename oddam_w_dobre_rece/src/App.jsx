@@ -7,6 +7,7 @@ import Columns from "./components/Columns.jsx";
 import SimpleSteps from "./components/SimpleSteps.jsx";
 import About from "./components/About.jsx";
 import supabase from '../src/config/supabaseClient.js';
+import WhoWeHelp from "./components/WhoWeHelp.jsx";
 function App() {
 console.log(supabase)
   return (
@@ -20,6 +21,7 @@ console.log(supabase)
           <Columns/>
           <SimpleSteps/>
           <About/>
+          <WhoWeHelp/>
       </BrowserRouter>
   );
 }

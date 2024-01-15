@@ -1,0 +1,46 @@
+.about {
+  width: 100%;
+
+  .about-container {
+    display: flex;
+
+    .about-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 50vw;
+      padding: 50px 100px;
+      background-color: $color-background;
+
+      h1 {
+        font-family: $font-base;
+        color: $color-font;
+        font-size: 33px;
+        line-height: 55px;
+        font-weight: 300;
+      }
+
+      p {
+        font-size: 25px;
+        font-weight: 300;
+      }
+
+      .signature_img {
+        width: 200px;
+        height: auto;
+        margin-left: auto;
+      }
+
+      .decoration_img {
+        margin: 26px 0 55px 0;
+      }
+    }
+
+    .people_img {
+      width: 50vw;
+      object-fit: cover;
+    }
+  }
+}

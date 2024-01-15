@@ -5,8 +5,10 @@ import Register from "./components/Register.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Columns from "./components/Columns.jsx";
 import SimpleSteps from "./components/SimpleSteps.jsx";
+import About from "./components/About.jsx";
+import supabase from '../src/config/supabaseClient.js';
 function App() {
-
+console.log(supabase)
   return (
       <BrowserRouter>
           <Header />
@@ -17,6 +19,7 @@ function App() {
           </Routes>
           <Columns/>
           <SimpleSteps/>
+          <About/>
       </BrowserRouter>
   );
 }

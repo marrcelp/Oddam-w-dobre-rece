@@ -1,0 +1,111 @@
+.whowehelp {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .whowehelp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    font-family: $font-base;
+    color: $color-font;
+
+    h1 {
+      font-family: $font-base;
+      color: $color-font;
+      font-size: 33px;
+      line-height: 55px;
+      font-weight: 300;
+      margin-top: 70px;
+    }
+
+    .decoration_img {
+      margin: 25px 0 60px 0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .button {
+        width: 33.33%;
+        border: 1px solid transparent;
+        padding: 11px 50px;
+        margin: 0 50px;
+        font-family: $font-base;
+        color: $color-font;
+        font-size: 19px;
+        font-weight: 300;
+        background-color: transparent;
+        cursor: pointer;
+
+        &.active {
+          border: 1px solid $color-font;
+        }
+
+
+      }
+    }
+    .helpers {
+      width: 90%;
+      list-style: none;
+
+      .helpers-list {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $color-font;
+        font-family: $font-alt;
+        color: $color-font;
+
+        li {
+          font-size: 21px;
+          font-weight: 300;
+        }
+        p {
+          font-size: 13px;
+          font-weight: 300;
+        }
+
+      }
+    }
+
+    .whowehelp-description {
+      width: 60%;
+      text-align: center;
+      font-family: $font-base;
+      color: $color-font;
+      font-weight: 300;
+      font-size: 17px;
+      margin: 60px 0;
+    }
+
+    .pagination {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+
+      .button-pagination {
+        font-family: $font-base;
+        font-size: 13px;
+        color: $color-font;
+        padding: 5px;
+        background-color: transparent;
+        margin: 0 5px;
+        cursor: pointer;
+        border: 1px solid transparent;
+
+        &.active-pagination {
+          border: 1px solid $color-font;
+        }
+      }
+
+    }
+  }
+}

@@ -10,6 +10,8 @@ const WhoWeHelp = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = useSelector((state) => state.itemsPerPage);
     const [displayType, setDisplayType] = useState('foundation');
+    const [activeButton, setActiveButton] = useState('foundation');
+    const [activePagination, setActivePagination] = useState(1);
 
 
     const dispatch = useDispatch();
@@ -61,9 +63,17 @@ const WhoWeHelp = () => {
 
         for (let i = 1; i <= totalItems; i++) {
             pageNumbers.push(
-                <button key={i} onClick={() => setCurrentPage(i)}>
+                <button
+                    className={`button-pagination ${activePagination === i ? 'active-pagination' : ''}`}
+                    key={i}
+                    onClick={() => {
+                        setCurrentPage(i);
+                        setActivePagination(i);
+                    }}
+                >
                     {i}
                 </button>
+
             );
         }
 
@@ -74,13 +84,14 @@ const WhoWeHelp = () => {
     const renderHelpers = () => {
         return (
             <>
-                <ul>
+                <ul className='helpers'>
                     {helpers.map((helper) => (
-                        <div key={helper.id}>
-                            <li>{helper[displayType + '_name']}</li>
-                            <p>Cel i misja: {helper[displayType + '_description']}</p>
+                        <div className='helpers-list' key={helper.id}>
+                            <div>
+                                <li>{helper[displayType + '_name']}</li>
+                                <p>Cel i misja: {helper[displayType + '_description']}</p>
+                            </div>
                             <p>{helper[displayType + '_stuff']}</p>
-                            <br></br>
                         </div>
 
                     ))}
@@ -92,6 +103,8 @@ const WhoWeHelp = () => {
     function handleClick(type) {
         setDisplayType(type);
         setCurrentPage(1);
+        setActiveButton(type);
+        setActivePagination(1);
     }
 
 
@@ -101,11 +114,11 @@ const WhoWeHelp = () => {
                 <h1>Komu pomagamy?</h1>
                 <img src={decoration_img} alt='decoration icon' className='decoration_img' />
                 <div className='buttons'>
-                    <button className='button' onClick={() => handleClick('foundation')}>Fundacjom</button>
-                    <button className='button' onClick={() => handleClick('organization')}>Organizacjom pozarządowym</button>
-                    <button className='button' onClick={() => handleClick('localcollections')}>Lokalnym zbiórkom</button>
+                    <button className={`button ${activeButton === 'foundation' ? 'active' : ''}`} onClick={() => handleClick('foundation')}>Fundacjom</button>
+                    <button className={`button ${activeButton === 'organization' ? 'active' : ''}`} onClick={() => handleClick('organization')}>Organizacjom<br></br>pozarządowym</button>
+                    <button className={`button ${activeButton === 'localcollections' ? 'active' : ''}`} onClick={() => handleClick('localcollections')}>Lokalnym<br></br> zbiórkom</button>
                 </div>
-                <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
+                <p className='whowehelp-description'>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, Organizacji pozarządowych czy lokalnych zbiórek z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego dokładnie potrzebują.</p>
                 {renderHelpers()}
                 <div className="pagination">
                     {renderPageNumbers()}

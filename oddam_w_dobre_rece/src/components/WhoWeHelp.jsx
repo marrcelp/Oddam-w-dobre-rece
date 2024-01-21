@@ -28,10 +28,14 @@ const WhoWeHelp = () => {
                 if (data) {
                     setDataArray(data);
                     console.log('DANE', data)
-
+                    console.log('ORGANIZACJE', dataArray);
                     const startIndex = (currentPage - 1) * itemsPerPage;
                     const endIndex = startIndex + itemsPerPage;
-                    setHelpers(data.sort((a, b) => a.id - b.id).slice(startIndex, endIndex));
+                    const indexWithNull = data.findIndex(helper => helper[displayType + '_name'] === null);
+
+                    setHelpers(data
+                        .sort((a, b) => a.id - b.id)
+                        .slice(startIndex, endIndex));
                     dispatch(setPage(currentPage));
                     console.log(data);
                     console.log('Foundations length wynosi:', helpers.length)
@@ -45,7 +49,14 @@ const WhoWeHelp = () => {
     }, [currentPage, itemsPerPage, dispatch]);
 
     const renderPageNumbers = () => {
-        const totalItems = Math.ceil(dataArray.length / itemsPerPage);
+        const firstNullIndex = dataArray.findIndex(helper =>
+            (displayType === 'foundation' && helper.foundation_name === null) ||
+            (displayType === 'organization' && helper.organization_name === null) ||
+            (displayType === 'localcollections' && helper.localcollections_name === null)
+        );
+
+        const totalItems = Math.ceil((firstNullIndex !== -1 ? firstNullIndex : dataArray.length) / itemsPerPage);
+
         const pageNumbers = [];
 
         for (let i = 1; i <= totalItems; i++) {
@@ -58,6 +69,7 @@ const WhoWeHelp = () => {
 
         return pageNumbers;
     };
+
 
     const renderHelpers = () => {
         return (
@@ -77,6 +89,10 @@ const WhoWeHelp = () => {
         );
     };
 
+    function handleClick(type) {
+        setDisplayType(type);
+        setCurrentPage(1);
+    }
 
 
     return (
@@ -85,9 +101,9 @@ const WhoWeHelp = () => {
                 <h1>Komu pomagamy?</h1>
                 <img src={decoration_img} alt='decoration icon' className='decoration_img' />
                 <div className='buttons'>
-                    <button className='button' onClick={() => setDisplayType('foundation')}>Fundacjom</button>
-                    <button className='button' onClick={() => setDisplayType('organization')}>Organizacjom pozarządowym</button>
-                    <button className='button' onClick={() => setDisplayType('localcollections')}>Lokalnym zbiórkom</button>
+                    <button className='button' onClick={() => handleClick('foundation')}>Fundacjom</button>
+                    <button className='button' onClick={() => handleClick('organization')}>Organizacjom pozarządowym</button>
+                    <button className='button' onClick={() => handleClick('localcollections')}>Lokalnym zbiórkom</button>
                 </div>
                 <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
                 {renderHelpers()}

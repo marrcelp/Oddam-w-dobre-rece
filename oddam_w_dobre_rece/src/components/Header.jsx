@@ -16,7 +16,7 @@ const Header = () => {
                         </li>
                     </ul>
                     <ul className='ul-nav'>
-                        {location.pathname === '/' ? (
+                        {/*{location.pathname === '/' ? (*/}
                             <>
                                 <ScrollLink to='home' smooth={true} duration={900}>
                                     <li>Start</li>
@@ -31,26 +31,26 @@ const Header = () => {
                                     <li>Fundacja i organizacje</li>
                                 </ScrollLink>
                             </>
-                            ) : (
-                                <>
+                        {/*    ) : (*/}
+                        {/*        <>*/}
 
-                        <li>
-                            <Link to="/#home">Start</Link>
-                        </li>
-                        <li>
-                            <Link to="/#simplesteps">O co chodzi?</Link>
-                        </li>
-                        <li>
-                            <Link to="/#about">O nas</Link>
-                        </li>
-                        <li>
-                            <Link to="/#whowehelp">Fundacja i organizacje</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Kontakt</Link>
-                        </li>
-                            </>
-                            )}
+                        {/*<li>*/}
+                        {/*    <Link to="/#home">Start</Link>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <Link to="/#simplesteps">O co chodzi?</Link>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <Link to="/#about">O nas</Link>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <Link to="/#whowehelp">Fundacja i organizacje</Link>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <Link to="/">Kontakt</Link>*/}
+                        {/*</li>*/}
+                        {/*    </>*/}
+                        {/*    )}*/}
                     </ul>
                 </nav>
             </div>

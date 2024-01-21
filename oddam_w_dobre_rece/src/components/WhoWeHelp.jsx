@@ -109,7 +109,7 @@ const WhoWeHelp = () => {
 
 
     return (
-        <section className='whowehelp'>
+        <section className='whowehelp' id='whowehelp'>
             <div className='whowehelp-container'>
                 <h1>Komu pomagamy?</h1>
                 <img src={decoration_img} alt='decoration icon' className='decoration_img' />

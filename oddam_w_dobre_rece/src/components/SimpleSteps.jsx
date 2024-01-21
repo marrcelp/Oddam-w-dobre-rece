@@ -4,10 +4,10 @@ import icon1 from '../../src/assets/icons/Icon-1@2x.png';
 import icon2 from '../../src/assets/icons/Icon-2@2x.png';
 import icon3 from '../../src/assets/icons/Icon-3@2x.png';
 import icon4 from '../../src/assets/icons/Icon-4@2x.png';
-
+import { Link } from 'react-router-dom';
 const SimpleSteps = () => {
     return (
-        <section className='simple_steps'>
+        <section className='simple_steps' id='simplesteps'>
             <h1>Wystarczą 4 proste kroki</h1>
             <img src={decoration_img} alt='decoration icon' className='decoration_img'/>
             <div className='container'>
@@ -34,7 +34,9 @@ const SimpleSteps = () => {
                     </div>
                 </div>
             </div>
-            <button className='btn button_simplesteps'>ODDAJ RZECZY</button>
+            <Link to="/login">
+                <button className='btn button_simplesteps'>ODDAJ RZECZY</button>
+            </Link>
         </section>
     );
 };

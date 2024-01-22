@@ -1,6 +1,10 @@
 import React from 'react';
 import decoration_img from '../../src/assets/icons/Decoration.svg';
 import { Link } from "react-router-dom";
+import Columns from "./Columns.jsx";
+import SimpleSteps from "./SimpleSteps.jsx";
+import About from "./About.jsx";
+import WhoWeHelp from "./WhoWeHelp.jsx";
 
 const Home = () => {
     return (
@@ -20,6 +24,10 @@ const Home = () => {
                         </div>
                     </div>
             </section>
+            <Columns/>
+            <SimpleSteps/>
+            <About/>
+            <WhoWeHelp/>
 
         </>
     );

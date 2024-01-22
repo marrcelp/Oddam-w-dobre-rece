@@ -18,10 +18,6 @@ console.log(supabase)
               <Route path="/register" element={<Register />} />
               <Route path="/" element={<Home />} />
           </Routes>
-          <Columns/>
-          <SimpleSteps/>
-          <About/>
-          <WhoWeHelp/>
       </BrowserRouter>
   );
 }

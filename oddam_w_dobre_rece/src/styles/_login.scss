@@ -1,0 +1,78 @@
+ .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //height: 100%;
+    height: calc(100vh - 132px);
+
+    h1 {
+      font-family: $font-base;
+      color: $color-font;
+      font-size: 33px;
+      font-weight: 300;
+    }
+
+    .decoration_img {
+      margin: 25px 0 40px 0;
+    }
+
+  }
+
+
+ .email_password {
+   background-color: $color-background;
+   display: flex;
+   flex-direction: column;
+   padding: 40px 67px;
+   margin-bottom: 20px;
+
+   label {
+     display: flex;
+     flex-direction: column;
+     font-family: "Open Sans", sans-serif;
+     font-weight: 400;
+     font-size: 16px;
+     color: $color-font;
+
+     &:first-child {
+       margin-bottom: 31px;
+     }
+
+     input {
+       background-color: $color-background;
+       border: none;
+       border-bottom: 1px solid $color-font;
+       width: 250px;
+       margin-top: 20px;
+       font-size: 14px;
+       font-family: $font-alt;
+       color: $color-font;
+       font-weight: 300;
+     }
+   }
+ }
+
+
+ .login-buttons {
+   display: flex;
+   justify-content: space-between;
+   width: 384px;
+
+   button {
+     font-family: "Open Sans";
+     font-size: 18px;
+     font-weight: 300;
+     color: $color-font;
+     background-color: transparent;
+     border: 1px solid transparent;
+     padding: 13px 15px;
+     cursor: pointer;
+
+     &:hover {
+       border: 1px solid $color-font;
+     }
+
+
+   }
+ }

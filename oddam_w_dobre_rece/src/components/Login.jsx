@@ -1,5 +1,6 @@
 import React from 'react';
 import decoration_img from "../assets/icons/Decoration.svg";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -18,7 +19,9 @@ const Login = () => {
                     </label>
                 </div>
                 <div className='login-buttons'>
-                    <button>Załóż konto</button>
+                    <Link to='/register'>
+                        <button>Załóż konto</button>
+                    </Link>
                     <button>Zaloguj się</button>
                 </div>
             </div>

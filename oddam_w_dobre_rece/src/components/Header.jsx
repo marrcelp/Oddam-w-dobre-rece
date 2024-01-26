@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
+
+
 const Header = () => {
+    const location = useLocation();
     return (
         <header className='header'>
             <div className='container'>
@@ -16,7 +19,7 @@ const Header = () => {
                         </li>
                     </ul>
                     <ul className='ul-nav'>
-                        {/*{location.pathname === '/' ? (*/}
+                        {location.pathname === '/' ? (
                             <>
                                 <ScrollLink to='home' smooth={true} duration={900}>
                                     <li>Start</li>
@@ -30,27 +33,31 @@ const Header = () => {
                                 <ScrollLink to='whowehelp' smooth={true} duration={900}>
                                     <li>Fundacja i organizacje</li>
                                 </ScrollLink>
-                            </>
-                        {/*    ) : (*/}
-                        {/*        <>*/}
+                                <ScrollLink to='contact' smooth={true} duration={900}>
+                                    <li>Kontakt</li>
+                                </ScrollLink>
 
-                        {/*<li>*/}
-                        {/*    <Link to="/#home">Start</Link>*/}
-                        {/*</li>*/}
-                        {/*<li>*/}
-                        {/*    <Link to="/#simplesteps">O co chodzi?</Link>*/}
-                        {/*</li>*/}
-                        {/*<li>*/}
-                        {/*    <Link to="/#about">O nas</Link>*/}
-                        {/*</li>*/}
-                        {/*<li>*/}
-                        {/*    <Link to="/#whowehelp">Fundacja i organizacje</Link>*/}
-                        {/*</li>*/}
-                        {/*<li>*/}
-                        {/*    <Link to="/">Kontakt</Link>*/}
-                        {/*</li>*/}
-                        {/*    </>*/}
-                        {/*    )}*/}
+                            </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link to="/#home">Start</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/#simplesteps">O co chodzi?</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/#about">O nas</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/#whowehelp">Fundacja i organizacje</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/#">Kontakt</Link>
+                                    </li>
+
+                            </>
+                            )}
                     </ul>
                 </nav>
             </div>
@@ -59,3 +66,4 @@ const Header = () => {
 };
 
 export default Header;
+

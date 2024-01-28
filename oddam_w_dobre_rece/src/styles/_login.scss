@@ -24,7 +24,7 @@
    background-color: $color-background;
    display: flex;
    flex-direction: column;
-   padding: 40px 67px;
+   padding: 30px 67px;
    margin-bottom: 20px;
 
    label {
@@ -34,6 +34,7 @@
      font-weight: 400;
      font-size: 16px;
      color: $color-font;
+     min-height: 77px;
 
      &:first-child {
        margin-bottom: 31px;

@@ -8,7 +8,7 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [isValid, setIsValid] = useState(true);
+    // const [isValid, setIsValid] = useState(true);
     const [nameError, setNameError] = useState(false);
     const [messageError, setMessageError] = useState(false);
     const [emailError, setEmailError] = useState(false);
@@ -31,13 +31,37 @@ const Contact = () => {
         const isEmailValid = validateEmail(email);
         const isMessageValid = message.length >= 120;
 
-        setIsValid(isNameValid && isEmailValid && isMessageValid);
+        // setIsValid(isNameValid && isEmailValid && isMessageValid);
 
         setNameError(!isNameValid);
         setEmailError(!isEmailValid);
         setMessageError(!isMessageValid);
 
-        return isNameValid && isEmailValid && isMessageValid;
+
+        if (isNameValid && isEmailValid && isMessageValid) {
+
+            fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({name: name, email: email, message: message})
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error === false) {
+                        alert('Zgłoszenie wysłane pomyślnie!');
+                    } else {
+                        alert('Wystąpił błąd podczas wysyłania zgłoszenia!');
+                    }
+                })
+                .catch((error) => {
+                console.log(error);
+                alert('Wystąpił błąd podczas wysyłania zgłoszenia!');
+            });
+        }
+
+
     }
 
     return (

@@ -51,7 +51,7 @@ const Login = () => {
                     <Link to='/register'>
                         <button>Załóż konto</button>
                     </Link>
-                    <button onClick={handleButtonClick}>Zaloguj się</button>
+                    <button className='second-btn' onClick={handleButtonClick}>Zaloguj się</button>
                 </div>
             </div>
         </section>

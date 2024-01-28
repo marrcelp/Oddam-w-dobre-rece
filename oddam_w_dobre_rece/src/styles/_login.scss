@@ -37,7 +37,7 @@
      min-height: 77px;
 
      &:first-child {
-       margin-bottom: 31px;
+       margin-bottom: 15px;
      }
 
      input {
@@ -66,14 +66,25 @@
      font-weight: 300;
      color: $color-font;
      background-color: transparent;
-     border: 1px solid transparent;
+     border: 0.75px solid transparent;
      padding: 13px 15px;
      cursor: pointer;
 
+
      &:hover {
-       border: 1px solid $color-font;
+       border: 0.75px solid $color-font;
      }
 
 
+   }
+
+   .second-btn {
+     border: 0.75px solid $color-font;
+
+     &:hover {
+       background-color: $color-login;
+       color: white;
+       box-shadow: 0 6px 15px 0 rgba(129,133,155,.74);
+     }
    }
  }

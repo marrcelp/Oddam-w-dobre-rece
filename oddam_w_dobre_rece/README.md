@@ -57,7 +57,7 @@ The project is organized as follows:
 Enjoy helping!
 
 ## You can check the application using below link: 
-[https://cocktailsearch-demo.netlify.app/](https://oddam-w-dobre-rece-demo.netlify.app/)
+[https://oddam-w-dobre-rece-demo.netlify.app/](https://oddam-w-dobre-rece-demo.netlify.app/)
 
 **App created by marrcelp.**
 

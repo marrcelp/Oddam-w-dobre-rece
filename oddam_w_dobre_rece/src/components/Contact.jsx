@@ -8,7 +8,6 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    // const [isValid, setIsValid] = useState(true);
     const [nameError, setNameError] = useState(false);
     const [messageError, setMessageError] = useState(false);
     const [emailError, setEmailError] = useState(false);
@@ -31,8 +30,6 @@ const Contact = () => {
         const isEmailValid = validateEmail(email);
         const isMessageValid = message.length >= 120;
 
-        // setIsValid(isNameValid && isEmailValid && isMessageValid);
-
         setNameError(!isNameValid);
         setEmailError(!isEmailValid);
         setMessageError(!isMessageValid);
@@ -45,11 +42,11 @@ const Contact = () => {
                     "Content-Type": "application/json",
                 },
                 method: "POST",
-                body: JSON.stringify({name: name, email: email, message: message})
+                body: JSON.stringify({name, email, message})
             })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.error === false) {
+                    if (data.status === 'success') {
                         alert('Zgłoszenie wysłane pomyślnie!');
                     } else {
                         alert('Wystąpił błąd podczas wysyłania zgłoszenia!');
